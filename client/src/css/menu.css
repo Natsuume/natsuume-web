@@ -1,0 +1,9 @@
+.menuBar {
+  background-color: rgba(255,255,255,0.75);
+  height: 10vh;
+}
+
+.menuBar *{
+  font-size: 22.5px;
+  font-family: 'Righteous', cursive;
+}
