@@ -11,6 +11,13 @@ export const BasePage: React.FC<{children: React.ReactNode | React.ReactNode[]}>
         <Row>
           {children}
         </Row>
+        <Row>
+          <Col>
+            <p className="copyright">
+              Copyright © 2020 natsuume All Rights Reserved.
+            </p>
+          </Col>
+        </Row>
       </Container>
     </>
   )

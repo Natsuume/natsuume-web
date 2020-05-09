@@ -1,7 +1,7 @@
 import React from "react";
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import { Topic } from "../BasePage";
-import { TopPageContents } from "../../../types/TopPageContents"
+import { TopPageContents } from "../../../types/top/TopPageContents"
 import "../../../css/topPage.css"
 
 export const Home: React.FC = () => {

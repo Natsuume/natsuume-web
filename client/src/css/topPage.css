@@ -1,44 +1,12 @@
-.accountIconBlock {
-  display: flex;
-  justify-content: center;
-}
-
-.accountIcon {
-  max-width: 20vw;
-  max-height: 20vw;
-}
-
 .profileNameBlock {
   background-color: rgb(187, 187, 187);
-  width: 100%;
-  height: 1px;
 }
 
 .profileName {
-  font-size: 5vh;
   font-family: 'Ubuntu', sans-serif;
 }
 
-.socialIcons {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-right: 1vw;
-}
-
-.standardSocialIcon {
-  width: 2vw;
-  margin-right: 0.25vw;
-  margin-left: 0.25vw;
-}
-
-.hatenaBlogIcon {
-  width: 3vw;
-  margin: 0;
-}
-
 .description {
-  font-size: 1.25vw;
   font-family: 'M PLUS 1p', sans-serif;
 }
 
@@ -46,9 +14,62 @@
   justify-content: center;
   max-height: 40vh;
   overflow-y: scroll;
+  margin-right: 4vw;
 }
 
 .informationThumbnail {
   max-width: 15vmin;
   max-height: 15vmin;
 }
+
+.contact{
+  display: flex;
+  justify-content: center;
+}
+
+.contactItem{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Righteous', cursive;
+  font-size: 3vmin;
+}
+
+@media screen and (min-width: 1024px) {
+  .accountIconBlock {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .accountIcon {
+    max-width: 20vw;
+    max-height: 20vw;
+  }
+  
+  .profileNameBlock {
+    width: 100%;
+    height: 1px;
+  }
+  
+  .profileName {
+    font-size: 6vmin;
+  }
+  
+  .socialIcons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1vw;
+  }
+  
+  .socialIcon {
+    width: 4vh;
+    margin-right: 0.25vw;
+    margin-left: 0.25vw;
+  }
+
+  .description {
+    font-size: 2vmin;
+  }
+}
+
