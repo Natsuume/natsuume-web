@@ -15,6 +15,6 @@ export interface InformationState {
 
 export interface InformationItem {
   content: string,
-  date: Date,
+  date: string,
   thumbnailUrl: string | null
 }
