@@ -8,7 +8,7 @@ export const initialInformationState: InformationState = {
       これはサンプルです
       このInformationが表示される場合、Informationの取得に失敗しています.
     `,
-    date: new Date(9999,11,31),
+    date: "9999-12-31",
     thumbnailUrl: null
     }
   ]

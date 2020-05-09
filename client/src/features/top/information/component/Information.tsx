@@ -18,7 +18,7 @@ export const Information: React.FC = () => {
                     <Container>
                       <Row>
                         <Col xs={2}>
-                          {toString(date)}
+                          {date.split("-").join("/")}
                         </Col>
                         <Col>
                           <Container>
@@ -51,8 +51,4 @@ export const Information: React.FC = () => {
       </Row>
     </Container>
   );
-}
-
-const toString: (date: Date) => string = (date) => {
-  return [date.getFullYear(), date.getMonth()+1, date.getDate()].join("/")
 }
