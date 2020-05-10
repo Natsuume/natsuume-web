@@ -6,20 +6,20 @@ import { initialInformationState } from "../../../types/top/initialStates";
 
 handle.epic()
   .on(InformationActions.$mounted, async () => {
-    const info: InformationItem[] = await httpClient.get("/api/information")
+    const info: InformationItem[] | null = await httpClient.get("/api/information")
       .then(response => response.data)
       .catch(error => {
-        console.log(error.response);
-        console.log(error.request);
-        console.log(error.config);
-
-        return error.response;
+        const response = error.response;
+        console.log(response.data);
+        console.log(response.status);
+        console.log(response.headers);
+        return null;
       });
 
-    if(info === undefined) {
-      return null;
-    }else{
+    if(info) {
       return InformationActions.fetchInformationFulfilled(info);
+    }else{
+      return null;
     }
   });
 

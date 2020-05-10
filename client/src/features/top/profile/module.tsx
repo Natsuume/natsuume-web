@@ -7,18 +7,20 @@ import { Profile } from "./component/Profile";
 handle
   .epic()
   .on(ProfileActions.$mounted, async () => {
-    const profile: ProfileState = await httpClient.get("/api/profile")
+    const profile: ProfileState | null = await httpClient.get("/api/profile")
       .then(response => response.data)
       .catch(error => {
-        console.log(error.response);
-        console.log(error.request);
-        console.log(error.config);
+        const response = error.response;
+        console.log(response.data);
+        console.log(response.status);
+        console.log(response.headers);
+        return null;
       })
 
-    if(profile === undefined) {
-      return null;
-    }else{
+    if(profile) {
       return ProfileActions.fetchProfileFulfilled(profile);
+    }else{
+      return null;
     }
   });
 
