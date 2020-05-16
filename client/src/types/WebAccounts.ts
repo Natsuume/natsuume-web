@@ -33,7 +33,7 @@ export const WebAccounts: {[key in WebServices]: WebService} = {
   }
 }
 
-interface WebService {
+export interface WebService {
   name: string,
   icon: string,
   link: string,

@@ -1,0 +1,1 @@
+export const GitHubSymbol = Symbol("GitHubSymbol");

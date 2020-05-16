@@ -2,7 +2,7 @@ import React from "react";
 import { Router, Switch, RouteProps, Route } from "react-router-dom";
 import { history } from "../utils/history";
 import { PageDefinitions } from "../types/PageDefinitions";
-import { BasePage } from "./pages/BasePage";
+import { BasePage } from "./pages/common/BasePage";
 import { usePageChangeModule } from "../features/global/module"
 
 
@@ -12,7 +12,7 @@ export const Routes: React.FC = () => {
     <Router history={history}>
       <Switch>
         {
-          Object.values(PageDefinitions).map(({path, Component}, key) => {
+          Object.values(PageDefinitions).map(({path, contents}, key) => {
             const base: RouteProps & {key: React.Key} = {
               key,
               exact: true,
@@ -22,9 +22,7 @@ export const Routes: React.FC = () => {
 
             return (
               <Route {...base}>
-                <BasePage>
-                  <Component></Component>
-                </BasePage>
+                <BasePage contents={contents}></BasePage>
               </Route>
             )
           })
