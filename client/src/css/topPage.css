@@ -1,4 +1,4 @@
-.profileNameBlock {
+.profileNameLine {
   background-color: rgb(187, 187, 187);
 }
 
@@ -39,27 +39,42 @@
   .accountIconBlock {
     display: flex;
     justify-content: center;
+    align-items: start;
+    padding: 0;
   }
   
   .accountIcon {
-    max-width: 20vw;
-    max-height: 20vw;
+    width: 90%;
+    height: auto;
+  }
+
+  .profileBlock {
+    display:flex;
+    justify-content: space-between;
   }
   
-  .profileNameBlock {
-    width: 100%;
+  .profileNameLine {
     height: 1px;
   }
   
   .profileName {
     font-size: 6vmin;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+  .profileName p{
+    height: 1.1em;
+    margin-bottom: 0;
+    vertical-align: top;
+    margin-bottom: 1.1vh;
   }
   
   .socialIcons {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
-    margin-right: 1vw;
+    align-items: flex-end;
+    padding-bottom: 1vh;
   }
   
   .socialIcon {

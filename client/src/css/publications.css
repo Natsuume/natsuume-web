@@ -1,0 +1,14 @@
+.bookTitle {
+  font-family: 'Kosugi Maru', sans-serif;
+  font-size: 3vmin;
+}
+
+.bookInfo {
+  font-family: 'M PLUS 1p', sans-serif;
+  font-size: 2vmin;
+}
+
+.bookImage {
+  height: 30vh;
+  width: auto;
+}

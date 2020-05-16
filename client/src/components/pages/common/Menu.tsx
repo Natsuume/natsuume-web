@@ -1,9 +1,9 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { useActions } from "typeless";
-import "../../css/menu.css";
-import { PageChangeActions } from "../../features/global/interface"
-import { PageDefinitions } from "../../types/PageDefinitions"
+import "../../../css/menu.css";
+import { PageChangeActions } from "../../../features/global/interface";
+import { PageDefinitions } from "../../../types/PageDefinitions";
 
 export const Menu: React.FC = () => {
   const { changePage } = useActions(PageChangeActions);

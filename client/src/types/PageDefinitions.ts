@@ -1,33 +1,36 @@
-import loadable, { LoadableComponent } from "@loadable/component";
+import { TopPageContents, PublicationsPageContents, ProgrammingPageContents, PageContent, ApplicationsPageContents } from './PageContent';
 
-export const PageDefinitions = {
+type pages =
+  | "index"
+  | "publications"
+  | "programming"
+  | "applications";
+
+export const PageDefinitions: {[key in pages]: PageDefinition} = {
   index: {
     path: "/",
     pageName: "Home",
-    Component: loadable(
-      () => import("../components/pages/top/Home").then(m => ({default: m.Home})),
-    ) as LoadableComponent<unknown>
+    contents: TopPageContents
   },
-  publish: {
-    path: "/publish",
+  publications: {
+    path: "/publications",
     pageName: "Publications",
-    Component: loadable(() => import("../components/pages/publications/Publications").then(m => (
-      {default: m.Publications})),
-    ) as LoadableComponent<unknown>
+    contents: PublicationsPageContents
   },
   programming: {
     path: "/programming",
     pageName: "Programming",
-    Component: loadable(
-      () => import("../components/pages/programming/Programming").then(m => (
-        {default: m.Programming})),
-    ) as LoadableComponent<unknown>
+    contents: ProgrammingPageContents
   },
-  hobby: {
-    path: "/application",
-    pageName: "Application",
-    Component: loadable(() => import("../components/pages/application/Application").then(m => (
-      {default: m.Hobby})),
-    ) as LoadableComponent<unknown>
+  applications: {
+    path: "/applications",
+    pageName: "Applications",
+    contents: ApplicationsPageContents
   },
+}
+
+export interface PageDefinition {
+  path: string,
+  pageName: string,
+  contents: PageContent[]
 }

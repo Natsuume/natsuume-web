@@ -1,6 +1,22 @@
 import axios from "axios";
 
-export const httpClient = axios.create({
+export const myServerClient = axios.create({
+  headers: {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "X-Requested-With": "XMLHttpRequest"
+  }
+})
+
+export const githubClient = axios.create({
+  headers: {
+    "Content-Type": "application/json",
+    "Accept": "application/vnd.github.v3+json",
+    "X-Requested-With": "XMLHttpRequest"
+  }
+})
+
+export const openbdClient = axios.create({
   headers: {
     "Content-Type": "application/json",
     "Accept": "application/json",
