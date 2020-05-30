@@ -1,33 +1,22 @@
 package dev.natsuume.web.data;
 
-import java.time.LocalDate;
-import java.util.Optional;
+import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import lombok.Data;
 
-public class InformationItem {
+@Entity
+@Data
+@Table(name="information")
+public class InformationItem{
 
-  private final String content;
-  private final LocalDate date;
-  private final Optional<String> thumbnailUrl;
+  @Id
+  private Integer infoId;
+  private String content;
+  private Date uploaded;
+  private String thumbnailUrl;
 
-  public InformationItem(String content, LocalDate date) {
-    this(content, date, Optional.empty());
-  }
-
-  public InformationItem(String content, LocalDate date, Optional<String> thumbnailUrl) {
-    this.content = content;
-    this.date = date;
-    this.thumbnailUrl = thumbnailUrl;
-  }
-
-  public String getContent() {
-    return content;
-  }
-
-  public LocalDate getDate() {
-    return date;
-  }
-
-  public Optional<String> getThumbnailUrl() {
-    return thumbnailUrl;
-  }
 }

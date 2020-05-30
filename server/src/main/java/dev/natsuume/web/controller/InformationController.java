@@ -1,20 +1,24 @@
 package dev.natsuume.web.controller;
 
 import dev.natsuume.web.data.InformationItem;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import dev.natsuume.web.repository.InformationRepository;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class InformationController {
 
+  private InformationRepository repository;
+
+  @Autowired
+  public InformationController(InformationRepository repository) {
+    this.repository = repository;
+  }
+
   @GetMapping("/api/information")
   public List<InformationItem> getInformation() {
-    LocalDate date = LocalDate
-        .parse("2020/05/06", DateTimeFormatter.ofPattern("yyyy/MM/dd"));
-
-    return List.of(new InformationItem("これはテストです.", date));
+    return repository.findAllByOrderByUploadedDesc();
   }
 }
