@@ -1,5 +1,5 @@
 import { WebAccounts, WebServices } from "./WebAccounts";
-import Icon from "../icons/AccountIcon.png";
+import Icon from "../icons/AccountIcon.svg";
 
 export const NatsuumeProfile: Profile = {
   name: "natsuume",

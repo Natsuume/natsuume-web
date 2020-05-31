@@ -44,7 +44,7 @@ const HeadLine: React.FC<{repository: GitHubRepository}> = ({repository}) => {
   return (
     <Container fluid>
       <Row>
-        <Col>
+        <Col className="repositoryName">
           <Container fluid>
             <Row>
               <Col>

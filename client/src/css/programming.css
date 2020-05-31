@@ -4,6 +4,11 @@
   overflow-y: scroll;
 }
 
+.repositoryName {
+  display: flex;
+  align-items: flex-end;
+}
+
 .itemBlock h3 {
   font-family: 'Ubuntu', sans-serif;
 }
