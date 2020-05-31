@@ -4,22 +4,20 @@ import { GitHubSymbol } from './symbol';
 export const [handle, GitHubActions, getGitHubState] = createModule(GitHubSymbol)
   .withActions({
     $mounted: null,
-    fetchGitHubFulfilled: (repositories: Repository[]) => ({payload: { repositories}})
+    fetchGitHubFulfilled: (repositories: GitHubRepository[]) => ({payload: { repositories}})
   })
   .withState<GitHubState>();
 
 export interface GitHubState {
-  repositories: Repository[]
+  repositories: GitHubRepository[]
 }
 
-export interface Repository {
+export interface GitHubRepository {
   name: string,
-  url: string,
   description: string | null,
-  owner: string,
-  fork: boolean,
+  createdDate: string,
+  updatedDate: string,
+  license: {name: string},
   languages: string[],
-  created: Date,
-  updated: Date,
-  license: string | null,
+  url: string,
 }

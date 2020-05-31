@@ -5,7 +5,7 @@ import { PaperSymbol } from './symbol';
 export const [handle, PapersActions, getPapersState] = createModule(PaperSymbol)
   .withActions({
     $mounted: null,
-    fetchBooksFulfilled: (books: PaperInfo[]) => ({payload: {books}})
+    fetchPapersFulfilled: (papers: PaperInfo[]) => ({payload: {papers}})
   })
   .withState<PapersState>();
 
@@ -15,7 +15,7 @@ export interface PapersState{
 
 export interface PaperInfo {
   title: string,
-  publisher: string,
-  pubDate: string,
-  author: string
+  author: string,
+  media: string,
+  year: string,
 }

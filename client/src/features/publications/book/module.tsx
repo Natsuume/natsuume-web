@@ -1,7 +1,6 @@
 import React from "react";
 import { BooksState, handle, BooksActions, BookSummary } from './interface';
-import { booksIsbn } from '../../../types/book';
-import { openbdClient } from '../../../utils/axios';
+import { openbdClient, myServerClient } from '../../../utils/axios';
 import { Books } from "./component/Books";
 
 const initialState: BooksState = {
@@ -10,12 +9,13 @@ const initialState: BooksState = {
 
 handle.epic()
   .on(BooksActions.$mounted, async () => {
-    const books = await Promise.all(booksIsbn.map(bookIsbn => openbdClient.get(
-          "https://api.openbd.jp/v1/get",
-          {params: {isbn: bookIsbn}}
-        )
-        .then<BookSummary>(response => response.data[0].summary)
-    ))
+    const books: BookSummary[] = await myServerClient.get<{isbn: string}[]>("/api/book")
+      .then(response => response.data)
+      .then(booksIsbn => Promise.all(booksIsbn.map(({isbn}) => openbdClient.get(
+        "https://api.openbd.jp/v1/get",
+        {params: {isbn}})
+        .then<BookSummary>(response => response.data[0].summary))
+      ))
 
     return BooksActions.fetchBooksFulfilled(books);
   })

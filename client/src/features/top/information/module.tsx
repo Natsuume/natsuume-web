@@ -9,7 +9,7 @@ const initialState: InformationState = {
 
 handle.epic()
   .on(InformationActions.$mounted, async () => {
-    const info: InformationItem[] | null = await myServerClient.get("/api/information")
+    const info: InformationItem[] | null = await myServerClient.get<InformationItem[]>("/api/information")
       .then(response => response.data)
       .catch(error => {
         const response = error.response;

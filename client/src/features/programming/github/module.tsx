@@ -1,7 +1,6 @@
 import React from "react";
-import { handle, GitHubActions, Repository, GitHubState } from './interface';
-import { githubClient } from '../../../utils/axios';
-import { githubRequestUrl, GitHubRepositoryAPIResponse, githubUserName } from '../../../types/github';
+import { handle, GitHubActions, GitHubRepository, GitHubState } from './interface';
+import { myServerClient } from '../../../utils/axios';
 import { GitHub } from "./component/GitHub";
 
 const initialState: GitHubState = {
@@ -10,28 +9,9 @@ const initialState: GitHubState = {
 
 handle.epic()
   .on(GitHubActions.$mounted, async () => {
-    const repositories: Repository[] = await githubClient.get(githubRequestUrl)
-      .then<GitHubRepositoryAPIResponse[]>(response => response.data)
-      .then<Repository[]>(async repositories => {
-        return await Promise.all(repositories.map(async repository => {
-          return {
-            name: repository.name,
-            description: repository.description,
-            url: repository.html_url,
-            owner: repository.owner.login,
-            fork: repository.fork,
-            languages: await githubClient.get(repository.languages_url)
-              .then<string[]>(response => Object.keys(response.data))
-            ,
-            created: new Date(repository.created_at),
-            updated: new Date(repository.updated_at),
-            license: repository.license ? repository.license.name: repository.license
-          }
-        }))
-      });
-
-      repositories.sort((a, b) => a.updated > b.updated ? -1 : 1)
-    return GitHubActions.fetchGitHubFulfilled(repositories.filter(repository => !repository.fork && repository.owner === githubUserName));
+    const repositories: GitHubRepository[] = await myServerClient.get<GitHubRepository[]>("/api/github")
+      .then(response => response.data);
+    return GitHubActions.fetchGitHubFulfilled(repositories);
   })
 
 handle.reducer(initialState)

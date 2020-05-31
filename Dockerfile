@@ -18,5 +18,5 @@ RUN mv jdk-${JAVA_VERSION} /usr/local/lib
 ENV JAVA_HOME=/usr/local/lib/jdk-${JAVA_VERSION}
 ENV PATH=${JAVA_HOME}/bin:${PATH}
 
-COPY ./server/build/libs/web-0.0.1-SNAPSHOT.jar /home/server.jar
+COPY ./server/build/libs/server-0.0.1-SNAPSHOT.jar /home/server.jar
 ENTRYPOINT ["java", "-jar", "/home/server.jar"]
