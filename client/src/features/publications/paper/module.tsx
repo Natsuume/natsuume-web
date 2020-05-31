@@ -9,15 +9,15 @@ const initialState: PapersState = {
 
 handle.epic()
   .on(PapersActions.$mounted, async () => {
-    const papers: PaperInfo[] = await myServerClient.get("/api/papers")
+    const papers: PaperInfo[] = await myServerClient.get<PaperInfo[]>("/api/paper")
       .then(response => response.data)
 
-    return PapersActions.fetchBooksFulfilled(papers);
+    return PapersActions.fetchPapersFulfilled(papers);
   })
 
 handle.reducer(initialState)
-  .on(PapersActions.fetchBooksFulfilled, ((state, {books}) => {
-    state.papers = books;
+  .on(PapersActions.fetchPapersFulfilled, ((state, {papers}) => {
+    state.papers = papers;
   }))
 
 

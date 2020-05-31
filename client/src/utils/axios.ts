@@ -8,14 +8,6 @@ export const myServerClient = axios.create({
   }
 })
 
-export const githubClient = axios.create({
-  headers: {
-    "Content-Type": "application/json",
-    "Accept": "application/vnd.github.v3+json",
-    "X-Requested-With": "XMLHttpRequest"
-  }
-})
-
 export const openbdClient = axios.create({
   headers: {
     "Content-Type": "application/json",

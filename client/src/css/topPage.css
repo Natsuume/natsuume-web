@@ -7,7 +7,7 @@
 }
 
 .description {
-  font-family: 'M PLUS 1p', sans-serif;
+  font-family: "M PLUS Rounded 1c", sans-serif;
 }
 
 .informationBlock {
@@ -15,6 +15,7 @@
   max-height: 40vh;
   overflow-y: scroll;
   margin-right: 4vw;
+  font-family: "M PLUS Rounded 1c", sans-serif;
 }
 
 .informationThumbnail {
@@ -35,56 +36,53 @@
   font-size: 3vmin;
 }
 
-@media screen and (min-width: 1024px) {
-  .accountIconBlock {
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    padding: 0;
-  }
-  
-  .accountIcon {
-    width: 90%;
-    height: auto;
-  }
-
-  .profileBlock {
-    display:flex;
-    justify-content: space-between;
-  }
-  
-  .profileNameLine {
-    height: 1px;
-  }
-  
-  .profileName {
-    font-size: 6vmin;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-  }
-  .profileName p{
-    height: 1.1em;
-    margin-bottom: 0;
-    vertical-align: top;
-    margin-bottom: 1.1vh;
-  }
-  
-  .socialIcons {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    padding-bottom: 1vh;
-  }
-  
-  .socialIcon {
-    width: 4vh;
-    margin-right: 0.25vw;
-    margin-left: 0.25vw;
-  }
-
-  .description {
-    font-size: 2vmin;
-  }
+.accountIconBlock {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 0;
 }
 
+.accountIcon {
+  width: auto;
+  height: 25vh;
+}
+
+.profileBlock {
+  display:flex;
+  justify-content: space-between;
+}
+
+.profileNameLine {
+  height: 1px;
+}
+
+.profileName {
+  font-size: 6vmin;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.profileName p{
+  height: 1.1em;
+  margin-bottom: 0;
+  vertical-align: top;
+  margin-bottom: 1.1vh;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: 1vh;
+}
+
+.socialIcon {
+  width: 4vh;
+  margin-right: 0.25vw;
+  margin-left: 0.25vw;
+}
+
+.description {
+  font-size: 2vmin;
+}

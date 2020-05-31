@@ -27,11 +27,15 @@
 }
 
 .copyright{
-  margin-top: 1vh;
+  margin-top: 2vh;
   text-align: center;
   font-family: 'Ubuntu', sans-serif;
   font-size: 1.5vmin;
 }
-@media screen and (min-width: 1024px) {
+
+.threeColumnImageBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 

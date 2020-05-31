@@ -33,6 +33,12 @@ export const PublicationsPageContents: PageContent[] = [
       m => ({default: m.BooksModule})
     )) as LoadableComponent<unknown>
   },
+  {
+    topic: "Papers",
+    Component: loadable(() => import("../features/publications/paper/module").then(
+      m => ({default: m.PapersModule})
+    )) as LoadableComponent<unknown>
+  },
 ]
 
 export const ProgrammingPageContents: PageContent[] = [
@@ -42,7 +48,19 @@ export const ProgrammingPageContents: PageContent[] = [
       m => ({default: m.GitHubModule})
     )) as LoadableComponent<unknown>
   },
+  {
+    topic: "Qiita",
+    Component: loadable(() => import("../features/programming/qiita/module").then(
+      m => ({default: m.QiitaModule})
+    )) as LoadableComponent<unknown>
+  },
 ]
 
 export const ApplicationsPageContents: PageContent[] = [
+  {
+    topic: "Applications",
+    Component: loadable(() => import("../features/applications/applications/module").then(
+      m => ({default: m.ApplicationsModule})
+    )) as LoadableComponent<unknown>
+  },
 ]

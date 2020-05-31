@@ -12,13 +12,13 @@ export const Information: React.FC = () => {
           <ListGroup>
             {
               information.map((info, key) => {
-                const { content, date, thumbnailUrl} = info;
+                const { content, uploaded, thumbnailUrl} = info;
                 return (
                   <ListGroup.Item key={key}>
                     <Container>
                       <Row>
                         <Col xs={2}>
-                          {date.split("-").join("/")}
+                          {uploaded.split("T")[0]}
                         </Col>
                         <Col>
                           <Container>

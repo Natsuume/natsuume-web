@@ -4,6 +4,6 @@
 }
 
 .menuBar *{
-  font-size: 22.5px;
+  font-size: min(2.5vw, 22.5px);
   font-family: 'Righteous', cursive;
 }

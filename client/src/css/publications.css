@@ -4,11 +4,23 @@
 }
 
 .bookInfo {
-  font-family: 'M PLUS 1p', sans-serif;
+  font-family: "M PLUS Rounded 1c", sans-serif;
   font-size: 2vmin;
 }
 
 .bookImage {
-  height: 30vh;
+  height: 25vh;
   width: auto;
+}
+
+.paperTitle {
+  font-family: 'Kosugi Maru', sans-serif;
+  font-size: 2.5vmin;
+  display: flex;
+  align-items: flex-end;
+}
+
+.paperInfo {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 2vmin;
 }
