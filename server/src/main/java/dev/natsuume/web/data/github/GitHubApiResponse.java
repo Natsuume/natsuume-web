@@ -13,7 +13,8 @@ import org.springframework.lang.Nullable;
 @JsonIgnoreProperties(ignoreUnknown=true)
 public class GitHubApiResponse {
   String name;
-  String url;
+  @JsonProperty("html_url")
+  String htmlUrl;
   @JsonProperty("private")
   boolean isPrivate;
   boolean fork;
@@ -59,7 +60,7 @@ public class GitHubApiResponse {
           .sorted(Comparator.comparingLong(Entry::getValue))
           .map(Entry::getKey)
           .collect(Collectors.toList()),
-        url
+        htmlUrl
     );
   }
 }
