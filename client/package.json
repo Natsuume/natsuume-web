@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://host.docker.internal:8080",
+  "homepage": ".",
   "dependencies": {
     "@loadable/component": "^5.12.0",
     "@testing-library/jest-dom": "^4.2.4",

@@ -1,8 +1,0 @@
-{
-  "short_name": "natsuume web",
-  "name": "natsuume web",
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#f8f8ff",
-  "background_color": "#ffffff"
-}
