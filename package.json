@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "description": "ホームページ作るzoi",
   "scripts": {
-    "build": "run-p build:server build:client",
+    "build": "run-p build:client",
     "build:server": "cd server && gradle build",
     "build:client": "cd client && npm run build",
-    "start": "run-p start:server start:client",
-    "start:server": "docker build -t natsuumeweb . && docker run --env-file=.env -p 8080:8080 -it natsuumeweb",
-    "start:client": "cd client/ && npm start",
+    "start": "cd client/ && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
