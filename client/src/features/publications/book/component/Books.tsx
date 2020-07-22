@@ -33,7 +33,7 @@ const BookDescription: React.FC<{book: BookSummary}> = ({book}) => {
         <p>{book.publisher}</p>
       </Row>
       <Row>
-        <p>{book.author.split("／著").join(",")}</p>
+        <p>{book.author.split("／著").join(",").slice(0, -1)}</p>
       </Row>
     </Container>
   )

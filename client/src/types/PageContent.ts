@@ -14,8 +14,8 @@ export const TopPageContents: PageContent[] = [
   },
   {
     topic: "information",
-    Component: loadable(() => import("../features/top/information/module").then(
-      m => ({default: m.InformationModule})
+    Component: loadable(() => import("../components/pages/top/Information").then(
+      m => ({default: m.Information})
     )) as LoadableComponent<unknown>
   },
   {
@@ -35,8 +35,8 @@ export const PublicationsPageContents: PageContent[] = [
   },
   {
     topic: "Papers",
-    Component: loadable(() => import("../features/publications/paper/module").then(
-      m => ({default: m.PapersModule})
+    Component: loadable(() => import("../components/pages/publications/Paper").then(
+      m => ({default: m.Papers})
     )) as LoadableComponent<unknown>
   },
 ]

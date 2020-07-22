@@ -9,9 +9,15 @@ const initialState: GitHubState = {
 
 handle.epic()
   .on(GitHubActions.$mounted, async () => {
-    const repositories: GitHubRepository[] = await myServerClient.get<GitHubRepository[]>("/api/github")
-      .then(response => response.data);
-    return GitHubActions.fetchGitHubFulfilled(repositories);
+    const test = await myServerClient.get<GitHubRepository[]>("https://api.natsuumeweb.natsuume.dev/api/github")
+      .then(response => response.data)
+      .catch(reason => {
+        console.log(reason)
+      });
+    // const repositories: GitHubRepository[] = await myServerClient.get<GitHubRepository[]>("https://api.natsuumeweb.natsuume.dev/api/github")
+    //   .then(response => response.data);
+    return null;
+    // return GitHubActions.fetchGitHubFulfilled(repositories);
   })
 
 handle.reducer(initialState)

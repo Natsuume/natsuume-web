@@ -11,11 +11,12 @@
 }
 
 .informationBlock {
-  justify-content: center;
+  justify-content: left;
   max-height: 40vh;
   overflow-y: scroll;
-  margin-right: 4vw;
+  margin-right: 0vw;
   font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 2vmin;
 }
 
 .informationThumbnail {
