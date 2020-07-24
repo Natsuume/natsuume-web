@@ -10,8 +10,12 @@ const initialState: QiitaState = {
 
 handle.epic()
   .on(QiitaActions.$mounted, async () => {
-    const articles: QiitaArticle[] = await myServerClient.get<QiitaArticle[]>("https://api.natsuumeweb.natsuume.dev/api/qiita")
+    const articles: QiitaArticle[] = await myServerClient.get<QiitaArticle[]>("/api/qiita")
       .then(response => response.data)
+      .catch(error => {
+        console.error(error);
+        return [];
+      });
 
     return QiitaActions.fetchQiitaFulfilled(articles);
   });
