@@ -9,15 +9,13 @@ const initialState: GitHubState = {
 
 handle.epic()
   .on(GitHubActions.$mounted, async () => {
-    const test = await myServerClient.get<GitHubRepository[]>("https://api.natsuumeweb.natsuume.dev/api/github")
+    const repositories: GitHubRepository[] = await myServerClient.get<GitHubRepository[]>("/api/github")
       .then(response => response.data)
-      .catch(reason => {
-        console.log(reason)
+      .catch(error => {
+        console.error(error);
+        return [];
       });
-    // const repositories: GitHubRepository[] = await myServerClient.get<GitHubRepository[]>("https://api.natsuumeweb.natsuume.dev/api/github")
-    //   .then(response => response.data);
-    return null;
-    // return GitHubActions.fetchGitHubFulfilled(repositories);
+    return GitHubActions.fetchGitHubFulfilled(repositories);
   })
 
 handle.reducer(initialState)
