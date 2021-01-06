@@ -20,7 +20,7 @@
     "@types/react-responsive": "^8.0.2",
     "@types/react-router-dom": "^5.1.5",
     "@types/webpack-env": "^1.15.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
